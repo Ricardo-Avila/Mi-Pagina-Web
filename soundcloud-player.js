@@ -1,57 +1,25 @@
-// soundcloud.js
+// En tu archivo soundcloud.js
 document.addEventListener('DOMContentLoaded', function() {
-    const widgetIframe = document.getElementById('sc-widget');
-    const toggleBtn = document.getElementById('sc-toggle');
+    const miniWidget = document.getElementById('sc-mini-widget');
     let widget;
-    let isPlaying = false;
-
-    // Cargar API de SoundCloud
-    function loadSCAPI() {
-        return new Promise((resolve) => {
-            if (window.SC) return resolve();
-            
-            const script = document.createElement('script');
-            script.src = 'https://w.soundcloud.com/player/api.js';
-            script.onload = resolve;
-            document.body.appendChild(script);
-        });
-    }
-
-    // Inicializar widget
-    function initWidget() {
-        widget = SC.Widget(widgetIframe);
-        
-        // Configurar eventos
+    
+    // Precargar cuando el usuario interactúe con la página
+    function initOnInteraction() {
+        widget = SC.Widget(miniWidget);
         widget.bind(SC.Widget.Events.READY, function() {
-            console.log('Reproductor listo');
-            toggleBtn.disabled = false;
-        });
-        
-        widget.bind(SC.Widget.Events.PLAY, function() {
-            isPlaying = true;
-            toggleBtn.textContent = '⏸ Pausar';
-        });
-        
-        widget.bind(SC.Widget.Events.PAUSE, function() {
-            isPlaying = false;
-            toggleBtn.textContent = '▶️ Reproducir';
-        });
-    }
-
-    // Control de reproducción
-    function togglePlayback() {
-        if (!widget) return;
-        
-        if (isPlaying) {
-            widget.pause();
-        } else {
             widget.play();
-        }
+            setTimeout(() => widget.pause(), 1000); // Precarga
+        });
+        
+        // Eliminar este listener después del primer uso
+        document.removeEventListener('click', initOnInteraction);
     }
-
-    // Inicialización completa
-    loadSCAPI().then(() => {
-        initWidget();
-        toggleBtn.addEventListener('click', togglePlayback);
-    });
+    
+    // Intentar autoplay después de interacción
+    document.addEventListener('click', initOnInteraction);
+    
+    // Alternativa: Forzar autoplay después de 5 segundos (puede no funcionar en móviles)
+    setTimeout(() => {
+        if (widget) widget.play();
+    }, 5000);
 });
