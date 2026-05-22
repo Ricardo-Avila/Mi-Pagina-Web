@@ -145,7 +145,7 @@ a {
 .hero-content {
     position: relative;
     z-index: 1;
-    width: min(760px, 100%);
+    width: min(940px, 100%);
     min-width: 0;
 }
 
@@ -159,12 +159,16 @@ a {
 }
 
 .hero h1 {
-    max-width: 720px;
+    max-width: 940px;
     margin: 0;
-    font-size: clamp(3.2rem, 10vw, 8.5rem);
+    font-size: clamp(3.1rem, 8.5vw, 8rem);
     line-height: 0.9;
     letter-spacing: 0;
-    overflow-wrap: break-word;
+}
+
+.hero h1 span {
+    display: block;
+    white-space: nowrap;
 }
 
 .hero-copy {
@@ -284,9 +288,79 @@ a {
     font-size: 1.05rem;
 }
 
+.route-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0 0 22px;
+}
+
+.route-option {
+    display: grid;
+    gap: 6px;
+    min-height: 132px;
+    align-content: center;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 18px 42px rgba(21, 31, 46, 0.08);
+    text-decoration: none;
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.route-option:hover,
+.route-option:focus-visible,
+.route-option.is-active {
+    border-color: rgba(8, 127, 122, 0.42);
+    transform: translateY(-3px);
+    box-shadow: 0 24px 54px rgba(21, 31, 46, 0.13);
+}
+
+.route-option span,
+.route-tag {
+    width: fit-content;
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: rgba(255, 107, 74, 0.12);
+    color: var(--coral);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.route-option strong {
+    font-size: 1.18rem;
+    line-height: 1.15;
+}
+
+.route-option small {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.route-detail {
+    margin: 0 0 22px;
+    border: 1px solid rgba(8, 127, 122, 0.22);
+    border-radius: var(--radius);
+    padding: 22px;
+    background: linear-gradient(135deg, rgba(8, 127, 122, 0.08), rgba(244, 183, 64, 0.12));
+}
+
+.route-detail h3 {
+    margin: 12px 0 8px;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    line-height: 1.15;
+}
+
+.route-detail p {
+    max-width: 860px;
+    margin: 0;
+}
+
 .route-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+    grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.28fr);
     gap: 28px;
     align-items: start;
 }
@@ -334,6 +408,43 @@ a {
     margin: 0;
 }
 
+.mark {
+    border-radius: 6px;
+    padding: 1px 5px;
+    font-weight: 800;
+}
+
+.mark.destination {
+    background: rgba(8, 127, 122, 0.12);
+    color: var(--teal-dark);
+}
+
+.mark.direction {
+    background: rgba(2, 91, 187, 0.12);
+    color: #0756a4;
+}
+
+.mark.exit,
+.mark.stop {
+    background: rgba(244, 183, 64, 0.22);
+    color: #7a4b00;
+}
+
+.mark.money {
+    background: rgba(18, 140, 126, 0.13);
+    color: #08735f;
+}
+
+.mark.alert {
+    background: rgba(255, 107, 74, 0.16);
+    color: #b93821;
+}
+
+.mark.dark {
+    background: rgba(24, 33, 47, 0.1);
+    color: var(--ink);
+}
+
 .route-card {
     position: sticky;
     top: 92px;
@@ -343,8 +454,10 @@ a {
 
 .route-card img {
     width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+    min-height: 620px;
+    max-height: 760px;
+    object-fit: contain;
+    background: #fff;
 }
 
 .route-card figcaption {
@@ -520,28 +633,19 @@ a {
 
 .sc-mini-player {
     position: fixed;
-    right: 18px;
-    bottom: 18px;
+    right: 0;
+    bottom: 0;
     z-index: 60;
-    width: 230px;
-    height: 92px;
+    width: 1px;
+    height: 1px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: var(--radius);
-    box-shadow: 0 18px 48px rgba(8, 19, 32, 0.24);
-    opacity: 0.92;
-    transition: transform 0.22s ease, opacity 0.22s ease;
-}
-
-.sc-mini-player:hover {
-    opacity: 1;
-    transform: translateY(-3px);
+    opacity: 0;
+    pointer-events: none;
 }
 
 .sc-mini-player iframe {
     display: block;
     height: 120px;
-    transform: translateY(-12px);
 }
 
 .site-footer {
@@ -622,6 +726,10 @@ a {
         grid-template-columns: 1fr;
     }
 
+    .route-options {
+        grid-template-columns: 1fr;
+    }
+
     .route-card {
         position: static;
     }
@@ -659,7 +767,7 @@ a {
     }
 
     .hero h1 {
-        font-size: clamp(2.85rem, 14vw, 3.9rem);
+        font-size: clamp(2.55rem, 12.8vw, 3.55rem);
         line-height: 0.95;
     }
 
@@ -688,6 +796,10 @@ a {
         font-size: 0.86rem;
     }
 
+    .route-card img {
+        min-height: 440px;
+    }
+
     .event-date {
         width: 100%;
     }
@@ -709,10 +821,6 @@ a {
 
     .event-item img {
         min-height: 220px;
-    }
-
-    .sc-mini-player {
-        display: none;
     }
 
     .site-footer {
