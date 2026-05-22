@@ -347,6 +347,34 @@ a {
     background: linear-gradient(135deg, rgba(8, 127, 122, 0.08), rgba(244, 183, 64, 0.12));
 }
 
+.route-panel {
+    position: relative;
+    margin-top: 34px;
+    border: 1px solid rgba(24, 33, 47, 0.14);
+    border-radius: var(--radius);
+    padding: 26px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 24px 70px rgba(21, 31, 46, 0.08);
+}
+
+.route-panel + .route-panel {
+    margin-top: 54px;
+}
+
+.route-panel + .route-panel::before {
+    position: absolute;
+    top: -28px;
+    right: 12%;
+    left: 12%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(24, 33, 47, 0.28), transparent);
+    content: "";
+}
+
+.route-panel .route-detail {
+    margin-bottom: 24px;
+}
+
 .route-detail h3 {
     margin: 12px 0 8px;
     font-size: clamp(1.4rem, 3vw, 2rem);
@@ -553,6 +581,32 @@ a {
     max-height: 760px;
     object-fit: contain;
     background: #fff;
+}
+
+.route-card-stack {
+    display: grid;
+    gap: 12px;
+    padding: 12px;
+}
+
+.route-card-stack img {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    border-radius: var(--radius);
+    object-fit: cover;
+}
+
+.route-card-stack figcaption {
+    padding: 4px 6px 8px;
+}
+
+.route-card-photo img {
+    min-height: 430px;
+    object-fit: cover;
+}
+
+.route-steps-wide {
+    max-width: 900px;
 }
 
 .route-card figcaption {
@@ -881,6 +935,10 @@ a {
 
     .route-card {
         position: static;
+    }
+
+    .route-panel {
+        padding: 18px;
     }
 
     .timeline::before,
