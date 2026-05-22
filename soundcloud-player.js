@@ -1,25 +1,26 @@
-// En tu archivo soundcloud.js
-document.addEventListener('DOMContentLoaded', function() {
-    const miniWidget = document.getElementById('sc-mini-widget');
-    let widget;
-    
-    // Precargar cuando el usuario interactúe con la página
-    function initOnInteraction() {
-        widget = SC.Widget(miniWidget);
-        widget.bind(SC.Widget.Events.READY, function() {
-            widget.play();
-            setTimeout(() => widget.pause(), 1000); // Precarga
-        });
-        
-        // Eliminar este listener después del primer uso
-        document.removeEventListener('click', initOnInteraction);
+document.addEventListener("DOMContentLoaded", () => {
+    const miniWidget = document.getElementById("sc-mini-widget");
+
+    if (!miniWidget || !window.SC?.Widget) {
+        return;
     }
-    
-    // Intentar autoplay después de interacción
-    document.addEventListener('click', initOnInteraction);
-    
-    // Alternativa: Forzar autoplay después de 5 segundos (puede no funcionar en móviles)
-    setTimeout(() => {
-        if (widget) widget.play();
-    }, 5000);
+
+    const widget = window.SC.Widget(miniWidget);
+    let isReady = false;
+
+    widget.bind(window.SC.Widget.Events.READY, () => {
+        isReady = true;
+    });
+
+    function startAfterInteraction() {
+        if (isReady) {
+            widget.play();
+        }
+
+        document.removeEventListener("click", startAfterInteraction);
+        document.removeEventListener("touchstart", startAfterInteraction);
+    }
+
+    document.addEventListener("click", startAfterInteraction, { passive: true });
+    document.addEventListener("touchstart", startAfterInteraction, { passive: true });
 });

@@ -3,140 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evento en Tequixquiac</title>
+    <meta name="description" content="Guía del viaje y programa del evento en Tequixquiac.">
+    <title>Viaje a Tequixquiac</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Viaje a Tequixquiac</h1>
+    <header class="site-header">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+            <span class="brand-mark">TQ</span>
+            <span>Tequixquiac</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Navegación principal">
+            <a href="#llegar">Cómo llegar</a>
+            <a href="#programa">Programa</a>
+            <a href="#mapa">Mapa</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <!-- Primera sección: Cómo llegar -->
-        <section id="llegar" class="section">
-            <h2 class="gallery-title" >¿Cómo llegar a Tequixquiac?</h2>
-            
-            <!-- Google Maps - Reemplaza la src con tu dirección -->
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d8332.573472314023!2d-99.1522433054929!3d19.90864680657804!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTnCsDU0JzMyLjQiTiA5OcKwMDgnNTIuNiJX!5e0!3m2!1ses!2smx!4v1749944005127!5m2!1ses!2smx"
-                    width="100%" 
-                    height="450" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy">
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-media" aria-hidden="true"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content reveal">
+                <p class="eyebrow">Sábado 21 de junio · 2:00 PM</p>
+                <h1>Viaje a Tequixquiac</h1>
+                <p class="hero-copy">
+                    Una guía clara para llegar desde Indios Verdes y disfrutar el evento sin perder detalle.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#llegar">Ver ruta</a>
+                    <a class="btn secondary" href="https://chat.whatsapp.com/JQpkl7rfLaX8GFukIpoLeG" target="_blank" rel="noopener">
+                        <span class="whatsapp-icon" aria-hidden="true"></span>
+                        Unirme al grupo
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-band" aria-label="Resumen del evento">
+            <div class="summary-item reveal">
+                <span>Salida</span>
+                <strong>Indios Verdes</strong>
+            </div>
+            <div class="summary-item reveal">
+                <span>Costo estimado</span>
+                <strong>$52.00</strong>
+            </div>
+            <div class="summary-item reveal">
+                <span>Duración</span>
+                <strong>90 min aprox.</strong>
+            </div>
+            <div class="summary-item reveal">
+                <span>Destino</span>
+                <strong>Tequixquiac</strong>
+            </div>
+        </section>
+
+        <section id="llegar" class="section route-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Ruta recomendada</p>
+                <h2>Cómo llegar a Tequixquiac</h2>
+                <p>Estos son los puntos clave para tomar el transporte correcto y llegar con calma.</p>
+            </div>
+
+            <div class="route-grid">
+                <div class="route-steps reveal">
+                    <article class="step">
+                        <span>01</span>
+                        <p>Llega al metro <strong>Indios Verdes</strong>.</p>
+                    </article>
+                    <article class="step">
+                        <span>02</span>
+                        <p>Camina en dirección contraria a la llegada del metro, hacia atrás, al sur.</p>
+                    </article>
+                    <article class="step">
+                        <span>03</span>
+                        <p>Baja las escaleras, sal de torniquetes y avanza a la izquierda por el túnel hacia la salida <strong>A</strong>.</p>
+                    </article>
+                    <article class="step">
+                        <span>04</span>
+                        <p>Busca el camión negro con verde que anuncia: <strong>“Zumpango, Tequix, Apaxco por Mexiquense”</strong>.</p>
+                    </article>
+                    <article class="step">
+                        <span>05</span>
+                        <p>Fórmate, paga <strong>$52.00</strong>, pide destino <strong>Tequixquiac</strong> y guarda tu boleto.</p>
+                    </article>
+                    <article class="step">
+                        <span>06</span>
+                        <p>El trayecto pasa por caseta 30-30, Zumpango y finalmente Tequixquiac.</p>
+                    </article>
+                </div>
+
+                <figure class="route-card reveal">
+                    <img src="terminal.png" alt="Croquis de la terminal para tomar el transporte">
+                    <figcaption>Croquis de referencia para ubicar la salida y el punto de abordaje.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section gallery-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Referencias visuales</p>
+                <h2>Galería de la ruta</h2>
+            </div>
+
+            <div class="carousel-container reveal" aria-label="Galería horizontal de referencias">
+                <div class="horizontal-gallery">
+                    <figure class="gallery-item"><img src="indios-verdes-logo.png" alt="Logo de Indios Verdes"></figure>
+                    <figure class="gallery-item"><img src="salida-A.png" alt="Salida A del metro"></figure>
+                    <figure class="gallery-item"><img src="parada.png" alt="Parada del transporte"></figure>
+                    <figure class="gallery-item"><img src="eco-elite.png" alt="Camión Eco Elite"></figure>
+                    <figure class="gallery-item"><img src="52.png" alt="Costo del boleto"></figure>
+                    <figure class="gallery-item"><img src="30-30.png" alt="Referencia de la caseta 30-30"></figure>
+                    <figure class="gallery-item"><img src="laguna.png" alt="Referencia de laguna"></figure>
+                    <figure class="gallery-item"><img src="tequixquiac.png" alt="Referencia de Tequixquiac"></figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="mapa" class="section map-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Ubicación</p>
+                <h2>Mapa del destino</h2>
+            </div>
+            <div class="map-container reveal">
+                <iframe
+                    title="Mapa de EcoCabañas AngeLiz"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d494.055025574582!2d-99.1316932!3d19.8881165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d18891781c57cf%3A0xc7b327c415beb1ff!2sEcoCaba%C3%B1as%20AngeLiz!5e1!3m2!1ses-419!2smx!4v1779421077667!5m2!1ses-419!2smx"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
-            
-            <!-- Galería horizontal -->
-            <h3 class="gallery-title">Galería</h3>
-            <div class="carousel-container">
-                <div class="horizontal-gallery">
-                    <div class="gallery-item"><img src="indios-verdes-logo.png" alt="Foto 1"></div>
-                    <div class="gallery-item"><img src="salida-A.png" alt="Foto 2"></div>
-                    <div class="gallery-item"><img src="parada.png" alt="Foto 3"></div>
-                    <div class="gallery-item"><img src="eco-elite.png" alt="Foto 4"></div>
-                    <div class="gallery-item"><img src="52.png" alt="Foto 5"></div>
-                    <div class="gallery-item"><img src="30-30.png" alt="Foto 6"></div>
-                    <div class="gallery-item"><img src="laguna.png" alt="Foto 7"></div>
-                    <div class="gallery-item"><img src="tequixquiac.png" alt="Foto 8"></div>
-                </div>
+        </section>
+
+        <section id="programa" class="section event-section">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Agenda</p>
+                <h2>Programa del evento</h2>
+                <p>Un recorrido sencillo por las actividades principales del día.</p>
             </div>
-            
-            <div class="image">
-                <img src="terminal.png" alt="Croquis">
+
+            <div class="event-date reveal">
+                <span>21 de junio</span>
+                <strong>2:00 PM</strong>
             </div>
-            
-            <h3 class="gallery-title">Instrucciones</h3>
-            <!-- Texto descriptivo -->
-            <div class="texto-descriptivo">
-                <p>1.- Llegar a el metro  <strong style="color: #1f8d03;">Indios Verdes</strong>.</p>
-                <p>2.- Dirigirse a direccion contrarea a la llega del metro, es decir, <strong>hacia atras (Sur).</strong></p>
-                <p>3.- Bajar las escaleras y salir de los torniquetes.</p>
-                <p>4.- Dirigirse a mano <strong>Izquierda</strong> sobre el Tunel a la salida con letra <strong>A</strong>.</p>
-                <p>5.- Subir las escaleras y encontraran el <strong style="color: #ff0303;">primer</strong> camion <strong>negro</strong> con <strong style="color: #23a402;">verde</strong>, los que gritan diran <strong> "Zumpago, Tequix, Apaxco por Mexiquense" </strong>.</p>
-                <p>6.- Formarse en la fila, pagar a <strong>$52.00</strong> y decir el destino <strong>"Tequixquiac"</strong> <strong style="color: #ff0303;">Importante: Les daran un BOLETO que no deben perder, si ven a personas con tarjeta no se preocupen no la necesitan.</strong></p>
-                <p>7.- Disfrutar el viaje: En 30 min. llegaran a la caseta <strong style="color: #020fa4;">30-30</strong>, en los siguientes 30 min. a <strong style="color: #029ca4;">Zumpango</strong> y en los ultimos 30 min. a <strong style="color: #8602a4;">Tequixquiac</strong>.</p>
+
+            <div class="timeline">
+                <article class="event-item reveal">
+                    <img src="bienvenida.jpg" alt="Bienvenida de los participantes">
+                    <div class="event-content">
+                        <time>02:00 PM</time>
+                        <h3>Bienvenida</h3>
+                        <p>Recepción de los participantes y arranque del evento.</p>
+                    </div>
+                </article>
+                <article class="event-item reveal">
+                    <img src="alberca.jpeg" alt="Alberca del evento">
+                    <div class="event-content">
+                        <time>03:00 PM</time>
+                        <h3>Albercada</h3>
+                        <p>Tiempo libre para convivir y refrescarse.</p>
+                    </div>
+                </article>
+                <article class="event-item reveal">
+                    <img src="comida.jpg" alt="Comida tradicional">
+                    <div class="event-content">
+                        <time>07:30 PM</time>
+                        <h3>Comida tradicional</h3>
+                        <p>Comida de Tequixquiac para compartir con todos.</p>
+                    </div>
+                </article>
+                <article class="event-item reveal">
+                    <img src="juego.jpeg" alt="Juegos para la noche">
+                    <div class="event-content">
+                        <time>09:00 PM</time>
+                        <h3>Talleres interactivos</h3>
+                        <p>Juegos y dinámicas para los invitados.</p>
+                    </div>
+                </article>
+                <article class="event-item reveal">
+                    <img src="fiesta.jpg" alt="Fiesta y convivencia">
+                    <div class="event-content">
+                        <time>10:00 PM</time>
+                        <h3>Fiesta y convivencia</h3>
+                        <p>Espacio para música, convivencia y cierre de la noche.</p>
+                    </div>
+                </article>
+                <article class="event-item reveal">
+                    <img src="dormir.avif" alt="Kit para dormir">
+                    <div class="event-content">
+                        <time>01:00 AM</time>
+                        <h3>Clausura</h3>
+                        <p>Entrega de kit para dormir y cierre del programa.</p>
+                    </div>
+                </article>
             </div>
         </section>
-        
-        <!-- Segunda sección: Evento -->
-        <section id="evento" class="section">
-            <h2 class="gallery-title">Programa del Evento</h2>
+    </main>
 
-            <div class="whatsapp-container">
-                <a href="https://chat.whatsapp.com/JQpkl7rfLaX8GFukIpoLeG" class="whatsapp-btn" target="_blank">
-                    <i class="whatsapp-icon"></i>
-                    Únete al grupo del evento
-                </a>
-            </div>
-            
-            <div class="fecha-evento">
-                <span class="fecha-destacada">21 de Junio</span>
-                <span class="hora-destacada">2:00 PM</span>
-            </div>
-            
-            <!-- Galería vertical con horarios -->
-            <div class="vertical-gallery">
-                <div class="event-item">
-                    <div class="event-time">02:00 PM</div>
-                    <img src="bienvenida.jpg" alt="Actividad 1">
-                    <div class="event-desc">Bienvenida de los participantes</div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-time">3:00 PM</div>
-                    <img src="alberca.jpg" alt="Actividad 2">
-                    <div class="event-desc">Albercada</div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-time">7:30 PM</div>
-                    <img src="comida.jpg" alt="Actividad 3">
-                    <div class="event-desc">Comida tradicional de Tequixquiac</div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-time">09:00 PM</div>
-                    <img src="juego.jpeg" alt="Actividad 4">
-                    <div class="event-desc">Talleres interactivos para los invitados (juegos para beber)</div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-time">10:00 PM</div>
-                    <img src="fiesta.jpg" alt="Actividad 5">
-                    <div class="event-desc">Fiesta y Convivencia con todos los invitados</div>
-                </div>
-                
-                <div class="event-item">
-                    <div class="event-time">01:00 AM</div>
-                    <img src="dormir.avif" alt="Actividad 6">
-                    <div class="event-desc">Clausura: entrega de kit para dormir</div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- En tu archivo HTML -->
-    <div class="sc-mini-player">
-        <iframe 
+    <aside class="sc-mini-player" aria-label="Reproductor de música">
+        <iframe
             id="sc-mini-widget"
-            width="100%" 
-            height="120" 
-            scrolling="no" 
-            frameborder="no" 
+            title="Reproductor de SoundCloud"
+            width="100%"
+            height="120"
+            scrolling="no"
+            frameborder="no"
             allow="autoplay"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/88659055&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/88659055&color=%23ff6b4a&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false">
         </iframe>
-    </div>
-    
-    <footer>
-        <p>© 2025 Evento en Tequixquiac. Todos los derechos reservados.</p>
+    </aside>
+
+    <footer class="site-footer">
+        <p>© 2026 Evento en Tequixquiac. Todos los derechos reservados.</p>
     </footer>
 
     <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script src="soundcloud-player.min.js"></script>
-
+    <script src="soundcloud-player.js" defer></script>
 </body>
 </html>
